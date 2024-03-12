@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b46d9effeea60d8bc9c2b3266f965b58a82f04429c212275ca67df761ed14879
-size 534
+package io.watssuggang.voda.pet.dto.res;
+
+import io.watssuggang.voda.common.enums.PetStatus;
+import io.watssuggang.voda.pet.domain.PetTalk;
+import lombok.Getter;
+
+@Getter
+public class PetTalkResponse {
+
+    private final String petTalk;
+    private final PetStatus petStatus;
+
+    private PetTalkResponse(PetTalk petTalk) {
+        this.petTalk = petTalk.getPetTalk();
+        this.petStatus = petTalk.getPetStatus();
+    }
+
+    public static PetTalkResponse of(PetTalk petTalk) {
+        return new PetTalkResponse(petTalk);
+    }
+}
