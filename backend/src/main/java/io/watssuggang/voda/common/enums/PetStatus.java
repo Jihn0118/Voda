@@ -1,15 +1,3 @@
-package io.watssuggang.voda.common.enums;
-
-import lombok.Getter;
-
-@Getter
-public enum PetStatus {
-
-    DIARY("01"), EAT("02"), HUNGRY("03"), REVOLUTION("04"), JOKE("05");
-
-    private final String label;
-
-    PetStatus(String label) {
-        this.label = label;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd0ee2f1c2cc4cedf43f25c8576a3f07d2fed3555823b5fcb7b9faa74bbf8043
+size 583

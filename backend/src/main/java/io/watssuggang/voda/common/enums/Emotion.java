@@ -1,14 +1,3 @@
-package io.watssuggang.voda.common.enums;
-
-import lombok.Getter;
-
-@Getter
-public enum Emotion {
-    JOY("01"), ANGER("02"), SADNESS("03"), FEAR("04"), CURIOSITY("05");
-
-    private final String label;
-
-    Emotion(String label) {
-        this.label = label;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c5ff42299fc4f1e6d7080f4eeb7e1ff3b6dfa1c60a53b2f4bdc18bbb14ed119d
+size 683
