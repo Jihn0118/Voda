@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f26d39ea783316c07e45e50fc5246da63b66ce2561097f0176cb896a7ecf66be
-size 26
+rootProject.name = 'voda'

@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a8e35e52388f5682464b792a01ba535ca75f377df70b51063356fe3312c0f868
-size 741
+package io.watssuggang.voda.pet.domain;
+
+import io.watssuggang.voda.common.converter.EmotionConverter;
+import io.watssuggang.voda.common.domain.File;
+import io.watssuggang.voda.common.enums.Emotion;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@DiscriminatorValue("p")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class PetFile extends File {
+
+    @Convert(converter = EmotionConverter.class)
+    @Column(columnDefinition = "char(2)")
+    private Emotion petEmotion;
+
+    @Column(columnDefinition = "tinyint")
+    private Byte petStage;
+
+    @Builder
+    public PetFile(Emotion petEmotion, Byte petStage) {
+        this.petEmotion = petEmotion;
+        this.petStage = petStage;
+    }
+}
