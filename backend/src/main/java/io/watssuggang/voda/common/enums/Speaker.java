@@ -1,11 +1,3 @@
-package io.watssuggang.voda.common.enums;
-
-public enum Speaker {
-    USER("01"), AI("02");
-
-    public final String label;
-
-    Speaker(String label) {
-        this.label = label;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6f207e1e1aa7f297349991a58107500eca1b98fa4c816b27dd04a8aceb518757
+size 188
