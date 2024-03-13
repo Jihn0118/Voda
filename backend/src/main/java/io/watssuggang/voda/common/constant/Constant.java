@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ead548456dfd7d2b5472279ea3b667f6170ba51f1a55e007d926791d7e24d8f
-size 219
+package io.watssuggang.voda.common.constant;
+
+public class Constant {
+
+    public static final Byte MAX_EXP = 10;
+    public static final Byte MAX_STAGE1_LEVEL = 6;
+    public static final Byte MAX_STAGE2_LEVEL = 11;
+}
