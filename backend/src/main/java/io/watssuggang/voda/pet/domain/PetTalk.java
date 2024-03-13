@@ -1,29 +1,3 @@
-package io.watssuggang.voda.pet.domain;
-
-import io.watssuggang.voda.common.domain.BaseEntity;
-import io.watssuggang.voda.common.enums.PetStatus;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
-
-@Entity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"petTalk", "petStatus"})})
-public class PetTalk extends BaseEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer petTalkId;
-    @NotNull
-    @Column(length = 30)
-    private String petTalk;
-    @Column(columnDefinition = "char(2)")
-    private PetStatus petStatus;
-
-    @Builder
-    public PetTalk(String petTalk, PetStatus petStatus) {
-        this.petTalk = petTalk;
-        this.petStatus = petStatus;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:98bb727873442a61703a49b139ebcf54c4fe3ef96182d275bf77da65a0b33f3c
+size 822

@@ -1,28 +1,3 @@
-package io.watssuggang.voda.common.converter;
-
-import io.watssuggang.voda.common.enums.PetStatus;
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
-
-@Converter
-public class PetStatusConverter implements AttributeConverter<PetStatus, String> {
-
-    @Override
-    public String convertToDatabaseColumn(PetStatus petStatus) {
-        return petStatus != null ? petStatus.getLabel() : null;
-    }
-
-    @Override
-    public PetStatus convertToEntityAttribute(String label) {
-        if (label == null) {
-            return null;
-        }
-
-        for (PetStatus enumValue : PetStatus.values()) {
-            if (enumValue.getLabel().equals(label)) {
-                return enumValue;
-            }
-        }
-        throw new IllegalArgumentException("Unknown petStatus label: " + label);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:815ab1e2a4a534615176262fe6db5642d06aebf05808520192d26bf3bf9eb2f9
+size 828
