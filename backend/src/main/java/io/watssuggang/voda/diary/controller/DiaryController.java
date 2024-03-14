@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dee5861e7cb5811948c16a2663a580ffbf5105f6a0d6e74762258f4eb80101b2
-size 769
+package io.watssuggang.voda.diary.controller;
+
+import io.watssuggang.voda.diary.dto.res.DiaryChatResponseDto;
+import io.watssuggang.voda.diary.service.DiaryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/diary")
+@RequiredArgsConstructor
+public class DiaryController {
+
+  public final DiaryService diaryService;
+
+  @GetMapping("/init")
+  public ResponseEntity<?> init() throws Exception {
+    DiaryChatResponseDto result = diaryService.init();
+    return ResponseEntity.ok(result.getContent().get(0).getText());
+  }
+
+}

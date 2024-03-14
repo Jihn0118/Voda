@@ -1,15 +1,3 @@
-package io.watssuggang.voda.common.jwt.config;
-
-import lombok.*;
-import org.springframework.boot.context.properties.*;
-import org.springframework.stereotype.*;
-
-@Data
-@Component
-@ConfigurationProperties(prefix = "spring.data.redis")
-public class RedisProperties {
-
-    private String host;
-    private int port;
-    private String password;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c92dc865c44dd74e7b17c4468f5bc1fdd010ebc7fe18be4b96094afa06f4dae5
+size 343
