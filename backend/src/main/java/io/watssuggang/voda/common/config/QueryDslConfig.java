@@ -1,19 +1,3 @@
-package io.watssuggang.voda.common.config;
-
-import com.querydsl.jpa.impl.JPAQueryFactory;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class QueryDslConfig {
-
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    @Bean
-    public JPAQueryFactory jpaQueryFactory() {
-        return new JPAQueryFactory(entityManager);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7f42ed7a34ffa06e1923fb721683100cd0566e77ed3b57e334f7cb7da34df62e
+size 521
