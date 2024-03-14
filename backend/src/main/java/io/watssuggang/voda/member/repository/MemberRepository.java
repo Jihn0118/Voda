@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fbcf9ef1dd8eb65b5a1e066346cefe9c84c4d39a9948879806cbd05fe220af8
-size 300
+package io.watssuggang.voda.member.repository;
+
+import io.watssuggang.voda.member.domain.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MemberRepository extends JpaRepository<Member, Integer> {
+
+}

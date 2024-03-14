@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dcc5badfddf975183ca7d9153e38414876c7ea1597fc6fd5d4e9eaea1d681307
-size 513
+package io.watssuggang.voda.common.validator;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+import java.lang.annotation.*;
+
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = EnumValidatorImpl.class)
+public @interface EnumValidator {
+
+    String message() default "Invalid Enum value";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+
+    Class<? extends Enum<?>> enumClass();
+}
