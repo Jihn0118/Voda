@@ -1,12 +1,3 @@
-package io.watssuggang.voda.diary.service;
-
-import io.watssuggang.voda.diary.dto.res.DiaryChatResponseDto;
-
-public interface DiaryService {
-
-  DiaryChatResponseDto init(); //claude 호출
-
-//  String fileToString(File file) throws IOException; //STT 호출
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3ac336f79f2b744eb0a7132a3521a8ebd15d33daa8d617330539fe6920d72ed1
+size 261
