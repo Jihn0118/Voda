@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0536e1647c4b0be4298cd9397f752c860d259dff84ac84544e1828573fe13a5e
-size 771
+import React from "react"; // eslint-disable-line no-unused-vars
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+// import Button from '@mui/material';
+
+const Button = styled.button({
+  display: "flex",
+  justifyContent: "center",
+  backgroundColor: "#CAD6C0",
+  fontWeight: "bold",
+  border: "0px",
+  alignItems: "center",
+  width: "100%",
+  height: "2.5rem",
+  borderRadius: "10px",
+  marginTop: "30vh",
+});
+
+export default function LoginButton() {
+  return (
+    <>
+      <Button>
+        <Link
+          to="/login"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          로그인하러 가기
+        </Link>
+      </Button>
+    </>
+  );
+}
