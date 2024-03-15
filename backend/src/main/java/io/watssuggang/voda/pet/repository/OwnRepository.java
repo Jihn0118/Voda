@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac4ce7b92485393276e3f818a86b1b70119622e2d5ff5ae67f40835e4d049651
-size 304
+package io.watssuggang.voda.pet.repository;
+
+import io.watssuggang.voda.pet.domain.Own;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OwnRepository extends JpaRepository<Own, Integer> {
+
+    List<Own> findAllByMember_MemberId(Integer memberId);
+}
