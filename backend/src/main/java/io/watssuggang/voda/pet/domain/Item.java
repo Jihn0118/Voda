@@ -1,32 +1,3 @@
-package io.watssuggang.voda.pet.domain;
-
-import io.watssuggang.voda.common.domain.BaseEntity;
-import jakarta.persistence.*;
-import lombok.*;
-
-@Entity
-@Getter
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(discriminatorType = DiscriminatorType.CHAR, name = "item_type")
-@DiscriminatorValue("i")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Item extends BaseEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer itemId;
-
-    private String itemImageUrl;
-
-    private Integer itemPrice;
-
-    @Column(columnDefinition = "char(30)")
-    private String itemName;
-
-    @Builder
-    public Item(String itemImageUrl, Integer itemPrice, String itemName) {
-        this.itemImageUrl = itemImageUrl;
-        this.itemPrice = itemPrice;
-        this.itemName = itemName;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bf0325721bb60f14ffa50fb8b94f6704958b3ae025d7532f42ff3448616871b9
+size 2520
