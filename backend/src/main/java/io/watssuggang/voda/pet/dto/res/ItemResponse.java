@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59dffd37a110d5322e2a015219d4aff3f201df9cf7326bd5739b219b195da0d8
-size 266
+package io.watssuggang.voda.pet.dto.res;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Getter
+public class ItemResponse {
+
+    private final Integer itemId;
+    private final String imgURl;
+    private final String name;
+}
