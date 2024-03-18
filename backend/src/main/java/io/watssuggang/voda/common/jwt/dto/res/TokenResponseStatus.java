@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1020f044695fe6dac91e702b4dd717829837c28f3d6e73612ff1bc73aa12ec72
-size 375
+package io.watssuggang.voda.common.jwt.dto.res;
+
+import lombok.*;
+
+
+// 토큰 응답 상태값
+@AllArgsConstructor
+@Getter
+public class TokenResponseStatus {
+
+    private Integer status;
+    private String accessToken;
+
+    public static TokenResponseStatus addStatus(Integer status, String accessToken) {
+        return new TokenResponseStatus(status, accessToken);
+    }
+}

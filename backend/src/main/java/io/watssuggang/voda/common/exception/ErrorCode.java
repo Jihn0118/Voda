@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4dcffdf1018a6d6d0f830997a5ad52ac4a7b6551fa5059a8b1fd8028d471de6
-size 678
+package io.watssuggang.voda.common.exception;
+
+import lombok.*;
+import org.springframework.http.*;
+
+@Getter
+public enum ErrorCode {
+
+    DUPLICATE_ITEM_NAME(HttpStatus.CONFLICT, "이미 존재하는 아이템 이름입니다."),
+    ITEM_NOT_FOUND(HttpStatus.NOT_FOUND, "아이템을 찾을 수 없습니다."),
+    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "멤버를 찾을 수 없습니다."),
+    TOKEN_NOT_AVAILABLE(HttpStatus.UNAUTHORIZED, "JWT 토큰이 만료되었습니다.");
+
+    private final HttpStatus status;
+    private final String message;
+
+    ErrorCode(HttpStatus status, String message) {
+        this.status = status;
+        this.message = message;
+    }
+}

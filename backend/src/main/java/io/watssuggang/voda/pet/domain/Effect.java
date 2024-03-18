@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a9a7b6ad9019a414e633117e9a932822256f794d3bff0a5c4da401913015020
-size 466
+package io.watssuggang.voda.pet.domain;
+
+
+import io.watssuggang.voda.common.enums.ItemCategory;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@DiscriminatorValue("02")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Effect extends Item {
+
+    @Builder
+    public Effect(String itemImageUrl, Integer itemPrice, String itemName,
+            ItemCategory itemCategory) {
+        super(itemImageUrl, itemPrice, itemName, itemCategory);
+    }
+}
