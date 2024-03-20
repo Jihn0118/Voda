@@ -1,16 +1,3 @@
-package io.watssuggang.voda.diary.repository;
-
-import io.watssuggang.voda.diary.domain.Diary;
-import java.time.LocalDateTime;
-import java.util.List;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-public interface DiaryRepository extends JpaRepository<Diary, Integer> {
-
-  @Query("SELECT COUNT(d) FROM Diary d WHERE d.member.pet.petId = :petId AND d.createdAt >= :createdAt")
-  Integer countDiaryByPetIdAndAfterToday(Integer petId, LocalDateTime createdAt);
-
-    @Query("SELECT d FROM Diary d WHERE d.member.pet.petId=:petId")
-    List<Diary> findAllByPetId(Integer petId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:557b5ce040c79b2d67f25bec10689a04c42552e9a6a1a39e466006215fc93a93
+size 588
