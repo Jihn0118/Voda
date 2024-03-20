@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:accd8515013028a27c7ebb10aeb084a6b0d5f6f4cc181b9b04686c57e815fb72
-size 914
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import Header from "../../components/shop/Header";
+import CategoryBar from "../../components/shop/CategoryBar";
+import ItemList from "../../components/shop/ItemList";
+
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const TopComponents = styled.div`
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const opacity = {
+  food: 0.5,
+  effect: 0.5,
+};
+
+export default function PetShopPage() {
+  return (
+    <Page>
+      <TopComponents>
+        <Header />
+        <CategoryBar />
+      </TopComponents>
+      <ItemList />
+    </Page>
+  );
+}

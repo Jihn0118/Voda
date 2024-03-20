@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6aa4c6826b265ed3a012b6d889e98bbf9a6030233cc3790741a7cc8aaf80c876
-size 877
+import { request } from "./api";
+import { HTTPMethods } from "./api";
+import { HTTPStatusCodes } from "./api";
+
+// Admin
+// 아이템 생성
+export const createItem = (data) => {
+  const url = `/item`;
+  const response = request(HTTPMethods.POST, url, data);
+};
+
+// Admin
+// 아이템 수정
+export const editItem = (data) => {
+  const url = `/item`;
+  const response = request(HTTPMethods.PATCH, url, data);
+};
+
+// Admin
+// 아이템 삭제
+export const deleteItem = () => {
+  const url = `/item`;
+  const response = request(HTTPMethods.DELETE, url);
+};
+
+// User
+// 아이템 구매
+export const buyItem = (data) => {
+  const url = `/item/buy`;
+  const response = request(HTTPMethods.POST, url, data);
+};
+
+// All
+// 상점 아이템 조회
+export const getItem = (category) => {
+  const url = `/item?category=${category}`;
+  const response = request(HTTPMethods.GET, url);
+};

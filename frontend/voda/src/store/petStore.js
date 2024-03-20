@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e9fa68c3467035c985c69b0d8f7ceca920c65c4e69954d6de06872d1da82c20
-size 343
+import { create } from "zustand";
+
+const usePetStore = create((set) => ({
+  currentCoin: 10,
+  currentFood: "Candy",
+  currentEffect: "cloud rain",
+  currentCategory: "food",
+  isFed: false,
+  setIsFed: (state) => set({ isFed: state }),
+  setCurrentCategory: (category) => set({ currentCategory: category }),
+}));
+
+export default usePetStore;

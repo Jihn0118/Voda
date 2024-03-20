@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:566bfd1aa645c76bc6a77a1f7598e85f65f61a27e3315a64bd3e96c90d533292
-size 541
+import { request } from "./api";
+import { HTTPMethods } from "./api";
+import { HTTPStatusCodes } from "./api";
+
+// User
+// 일기 상세 정보
+export const getDiaryDetail = (diaryId) => {
+  const url = `/diary/detail/${diaryId}`;
+  const response = request(HTTPMethods.GET, url);
+};
+
+// User
+// 일기 리스트
+// 없는 파라미터들은 빈 문자열 ""
+export const getDiaryList = (start, end, emotion) => {
+  const url = `/diary/list?start=${start}&end=${end}&emotion=${emotion}`;
+  const response = request(HTTPMethods.GET, url);
+};
