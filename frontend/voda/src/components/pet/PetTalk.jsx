@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be0f70587812e8ac37b4684958c18e37801da2bda51c7cf014dff11d7c0b3fe4
-size 348
+import React from "react";
+import styled from "styled-components";
+
+const Chatbox = styled.div({
+  borderRadius: "2rem",
+  backgroundColor: "#686868",
+  width: "70vw",
+  color: "white",
+  textAlign: "center",
+  padding: "1rem",
+});
+
+export default function PetTalk(props) {
+  return (
+    <>
+      <Chatbox>일기 써 줘.</Chatbox>
+    </>
+  );
+}
