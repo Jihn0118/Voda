@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3bffa3f9683fb43a4b1fe9650d49bfe0ab99c5554e470e585c84911bf2122b1
-size 631
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Start() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate;
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+      setIsLoggedIn(true);
+      window.location.href = "/pet";
+    } else {
+      const intro = localStorage.getItem("intro");
+      if (intro == "no") {
+        window.location.href = "/login";
+      } else {
+        window.location.href = "/intro";
+      }
+    }
+  }, [isLoggedIn]);
+
+  return <></>;
+}

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b540ed12e44abe711ae67f1a4f24dcd660eb6fbcb7d86e0734ed18e71076cacb
-size 875
+import React from "react";
+import usePetStore from "../../store/petStore";
+import styled from "styled-components";
+
+const HeaderComponent = styled.div({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  width: "85%",
+  borderBottom: "1px solid #ccc",
+});
+
+export default function Header() {
+  const { currentCoin } = usePetStore();
+  return (
+    <HeaderComponent>
+      <h3>상점</h3>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "0.5rem",
+        }}
+      >
+        <img
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Coin.png"
+          alt="Coin"
+          width="40rem"
+          height="40rem"
+        />
+        <h3>{currentCoin}</h3>
+      </div>
+    </HeaderComponent>
+  );
+}

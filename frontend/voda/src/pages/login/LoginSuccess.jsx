@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b45ece112d23d2d31fe24c69679bae50ace4f6e3c1ab15580c148dad013c5010
-size 847
+import React, { useEffect, useState } from "react"; // eslint-disable-line
+import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useStore from "../../store/store";
+
+export default function LoginSuccess() {
+  const [query] = useSearchParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const accessToken = query.get("accessToken");
+    const email = query.get("email");
+    const provider = query.get("provider");
+    if (accessToken) {
+      window.localStorage.setItem("accessToken", accessToken);
+      window.location.href = "/pet";
+      // navigate("/pet");
+    } else if (email && provider) {
+      window.localStorage.setItem("email", email);
+      window.localStorage.setItem("provider", provider);
+      navigate("/login/nickname");
+    }
+  }, []);
+
+  return <></>;
+}
