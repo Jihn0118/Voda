@@ -1,27 +1,3 @@
-package io.watssuggang.voda.common.jwt.dto;
-
-import jakarta.persistence.*;
-import java.io.*;
-import lombok.*;
-import org.springframework.data.redis.core.*;
-import org.springframework.data.redis.core.index.*;
-
-
-@Getter
-@AllArgsConstructor
-@RedisHash(value = "jwtToken", timeToLive = 60 * 60 * 24 * 7)
-public class RefreshToken implements Serializable {
-
-    @Id
-    private String id;
-
-    // Indexed 어노테이션을 붙이면 findBy가 가능해짐
-    @Indexed
-    private String accessToken;
-
-    private String refreshToken;
-
-    public void updateAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:63d811221b372842e051d1e16b1687da84d9bb3a568552f10b7787876ed23cc2
+size 636

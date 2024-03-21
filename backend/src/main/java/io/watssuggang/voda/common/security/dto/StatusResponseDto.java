@@ -1,21 +1,3 @@
-package io.watssuggang.voda.common.security.dto;
-
-import com.fasterxml.jackson.annotation.*;
-import lombok.*;
-
-@Getter
-@AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL) // DTO 를 JSON으로 변환 시 null값인 field 제외
-public class StatusResponseDto {
-
-    private Integer status;
-    private Object data;
-
-    public StatusResponseDto(Integer status) {
-        this.status = status;
-    }
-
-    public static StatusResponseDto addStatus(Integer status) {
-        return new StatusResponseDto(status);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:77a29549dee14f8455b93ea5997b192a05b7e7d78b565fd5b8a4d615a4447a33
+size 529

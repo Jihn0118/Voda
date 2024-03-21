@@ -1,13 +1,3 @@
-package io.watssuggang.voda.common.jwt.repository;
-
-
-import io.watssuggang.voda.common.jwt.dto.*;
-import java.util.*;
-import org.springframework.data.repository.*;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface RefreshTokenRepository extends CrudRepository<RefreshToken, String> {
-
-    Optional<RefreshToken> findByAccessToken(String accessToken);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0e4bdb1ccafc777246bfdd4332be460786037d653cc49c81f699cc4959ee5950
+size 383

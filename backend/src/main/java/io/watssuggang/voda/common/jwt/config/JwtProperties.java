@@ -1,13 +1,3 @@
-package io.watssuggang.voda.common.jwt.config;
-
-import lombok.*;
-import org.springframework.boot.context.properties.*;
-import org.springframework.stereotype.*;
-
-@Data
-@Component
-@ConfigurationProperties(prefix = "spring.jwt")
-public class JwtProperties {
-
-    private String secret;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2397199445ec9f78eaf15f05e7ce0ce31eb21668f6c48ae4feeb124fec9d51cf
+size 285
