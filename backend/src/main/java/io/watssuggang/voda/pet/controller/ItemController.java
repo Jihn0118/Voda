@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcff817dd62bb17e8619a982c65bb2de3903cb1c1c243b7c969cbfa1d007d115
-size 1383
+package io.watssuggang.voda.pet.controller;
+
+import io.watssuggang.voda.pet.dto.req.ItemRequest;
+import io.watssuggang.voda.pet.dto.req.ItemUpdateRequest;
+import io.watssuggang.voda.pet.dto.res.ItemResponse;
+import io.watssuggang.voda.pet.service.ItemService;
+import jakarta.validation.Valid;
+import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/item")
+public class ItemController {
+
+    private final ItemService itemService;
+
+    @PostMapping
+    public ResponseEntity<ItemResponse> createItem(
+            @RequestBody @Valid ItemRequest postRequest
+    ) {
+        ItemResponse item = itemService.createItem(postRequest);
+        return ResponseEntity.ok(item);
+    }
+
+    @PatchMapping("{item-id}")
+    public ResponseEntity<?> createItem(
+            @RequestBody @Valid ItemUpdateRequest updateRequest,
+            @PathVariable("item-id") Integer itemId
+    ) {
+        ItemResponse itemResponse = itemService.updateItem(itemId, updateRequest);
+        return ResponseEntity.ok(itemResponse);
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getItemsByCategory() {
+        List<ItemResponse> itemsByCategory = itemService.getAllItemByCategory();
+        return ResponseEntity.ok(itemsByCategory);
+    }
+}

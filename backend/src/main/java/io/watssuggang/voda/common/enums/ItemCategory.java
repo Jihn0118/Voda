@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eeea346b306350a389f10766f9400b90b5c3f31bceadbd0ee1dca9a82cb66e3b
-size 552
+package io.watssuggang.voda.common.enums;
+
+import io.watssuggang.voda.common.converter.AbstractLabelConverter;
+import lombok.Getter;
+
+@Getter
+public enum ItemCategory implements LabelEnum {
+
+    FOOD("01"), EFFECT("02");
+    private final String label;
+
+    ItemCategory(String label) {
+        this.label = label;
+    }
+
+    @jakarta.persistence.Converter(autoApply = true)
+    static class ConverterAbstract extends AbstractLabelConverter<ItemCategory> {
+
+        public ConverterAbstract() {
+            super(ItemCategory.class);
+        }
+    }
+}
