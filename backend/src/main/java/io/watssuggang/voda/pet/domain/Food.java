@@ -1,18 +1,3 @@
-package io.watssuggang.voda.pet.domain;
-
-import io.watssuggang.voda.common.enums.ItemCategory;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import lombok.*;
-
-@Entity
-@DiscriminatorValue("01")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Food extends Item {
-
-    @Builder
-    public Food(String itemImageUrl, Integer itemPrice, String itemName,
-            ItemCategory itemCategory) {
-        super(itemImageUrl, itemPrice, itemName, itemCategory);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:511618be1bd10a6d760765112f5506139b8fc1cb51158780b254bfae5ed007be
+size 509

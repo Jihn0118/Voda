@@ -1,12 +1,3 @@
-package io.watssuggang.voda.member.dto.req;
-
-import lombok.*;
-
-@Getter
-@ToString
-public class SignUpRequest {
-
-    private String email;
-    private String nickname;
-    private String provider;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:de452420a42d6b072669784dcf69f5bc2199f888b3dad7b83217bb115f0ea5ea
+size 226
