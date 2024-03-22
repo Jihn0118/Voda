@@ -1,18 +1,3 @@
-import React from "react";
-
-export default function Emotion() {
-  const emotion = {
-    url: "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Squinting%20Face.png",
-  };
-  return (
-    <>
-      <img
-        src={emotion.url}
-        style={{
-          width: "3rem",
-          height: "3rem",
-        }}
-      />
-    </>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:daaa037e17b5bf5f12618f94b09a0d13d216649cdb5fe7888fa77cfcf7d541b3
+size 626
