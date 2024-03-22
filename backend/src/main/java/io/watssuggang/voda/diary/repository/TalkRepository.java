@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a7965187acf4c5f3bc896e32c135bc2d06985325625c2b60739a68628bf27944
-size 305
+package io.watssuggang.voda.diary.repository;
+
+import io.watssuggang.voda.diary.domain.Talk;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TalkRepository extends JpaRepository<Talk, Integer> {
+
+    List<Talk> findAllByDiary_DiaryId(int diaryId);
+}
