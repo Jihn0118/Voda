@@ -1,24 +1,3 @@
-import React from "react";
-import vodaLogo from "/logo.svg";
-
-export default function IntroductionHeader() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        marginTop: "1.5rem",
-      }}
-    >
-      <img
-        src={vodaLogo}
-        style={{
-          width: "3rem",
-          height: "3rem",
-        }}
-      />
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1de0e93fe42f05ee769c7db2650bdc6f59f734e10b3fcded7b8c94ed3a117c83
+size 454
