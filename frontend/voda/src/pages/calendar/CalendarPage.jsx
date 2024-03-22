@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9ae82d037e3e8e5f418c062e47294ded527569e445b7e156bb25c109a067d70
-size 269
+import React from "react"; // eslint-disable-line no-unused-vars
+import Calendar from "../../components/calendar/Calendar";
+
+const CalendarPage = () => {
+  return (
+    <>
+      <h2>감정 캘린더</h2>
+      <Calendar />
+    </>
+  );
+};
+
+export default CalendarPage;
