@@ -1,26 +1,3 @@
-import React, { useEffect, useState } from "react"; // eslint-disable-line
-import { useSearchParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import useStore from "../../store/store";
-
-export default function LoginSuccess() {
-  const [query] = useSearchParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const accessToken = query.get("accessToken");
-    const email = query.get("email");
-    const provider = query.get("provider");
-    if (accessToken) {
-      window.localStorage.setItem("accessToken", accessToken);
-      window.location.href = "/pet";
-      // navigate("/pet");
-    } else if (email && provider) {
-      window.localStorage.setItem("email", email);
-      window.localStorage.setItem("provider", provider);
-      navigate("/login/nickname");
-    }
-  }, []);
-
-  return <></>;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8726bb7c3cfcfd45d311e6b6e17e215b84cbd3db4fd71e69d650769f5136097
+size 1567
