@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da2ef3bfd8273a3cabb5cda5613bc5d19b2f66763c123d08e6d958e1c542b722
-size 624
+package io.watssuggang.voda.diary.dto.req;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import io.watssuggang.voda.diary.dto.res.ImageResponse;
+import java.util.List;
+import lombok.*;
+
+@Getter
+@Data
+@JsonInclude(Include.NON_ABSENT)
+public class KarloResponse {
+
+
+    String id;
+    String model_version;
+    List<ImageResponse> images;
+
+    public KarloResponse(String id, String model_version, List<ImageResponse> images) {
+        this.id = id;
+        this.model_version = model_version;
+        this.images = images;
+    }
+}

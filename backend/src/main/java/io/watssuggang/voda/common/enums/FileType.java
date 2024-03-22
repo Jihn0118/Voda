@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b73563847943bc0c1eb9901a03116bd28b44c92293f959f833d61de752bd15fc
-size 132
+package io.watssuggang.voda.common.enums;
+
+import io.watssuggang.voda.common.converter.AbstractLabelConverter;
+import lombok.Getter;
+
+/**
+ * 알파벳 3글자로 정의할 것
+ */
+@Getter
+public enum FileType implements LabelEnum {
+    IMG("01"), GIF("02"), MP4("03"), WEBP("04");
+
+    private final String label;
+
+    FileType(String label) {
+        this.label = label;
+    }
+
+    @jakarta.persistence.Converter(autoApply = true)
+    static class ConverterAbstract extends AbstractLabelConverter<FileType> {
+
+        public ConverterAbstract() {
+            super(FileType.class);
+        }
+    }
+}

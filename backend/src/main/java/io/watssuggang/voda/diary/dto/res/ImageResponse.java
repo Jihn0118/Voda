@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:923053bd3a6e70aad9af4d3ddbaddb7ada817aa5bc890cd50a0a91e6e4717f44
-size 492
+package io.watssuggang.voda.diary.dto.res;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Getter
+@JsonInclude(Include.NON_ABSENT)
+public class ImageResponse {
+
+    private final String id;
+    private final String image;
+    private final Long seed;
+    private final Boolean nsfwContentDetected;
+    private final Boolean nsfwScore;
+}

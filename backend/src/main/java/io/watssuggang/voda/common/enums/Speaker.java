@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7874975c55d29e0f4c5c9dc964b5303eaa4d390898e51f04e8ae4bda0556e518
-size 528
+package io.watssuggang.voda.common.enums;
+
+import io.watssuggang.voda.common.converter.AbstractLabelConverter;
+import lombok.Getter;
+
+@Getter
+public enum Speaker implements LabelEnum {
+    USER("01"), AI("02");
+
+    public final String label;
+
+    Speaker(String label) {
+        this.label = label;
+    }
+
+    @jakarta.persistence.Converter(autoApply = true)
+    static class ConverterAbstract extends AbstractLabelConverter<Speaker> {
+
+        public ConverterAbstract() {
+            super(Speaker.class);
+        }
+    }
+
+}

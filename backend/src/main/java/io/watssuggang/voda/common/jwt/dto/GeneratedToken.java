@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6aaf6adabde2670b7eceec93870dc66726180e973cc6564ac54fd2785eb26823
-size 228
+package io.watssuggang.voda.common.jwt.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class GeneratedToken {
+
+    private String accessToken;
+    private String refreshToken;
+}

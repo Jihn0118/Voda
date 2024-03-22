@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6456b1ef89be6df0f86fe952aefb1b614364ff7575b27f63104f5fe3e530de2
-size 794
+package io.watssuggang.voda.diary.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.watssuggang.voda.common.domain.File;
+import io.watssuggang.voda.common.enums.FileType;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@DiscriminatorValue("d")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Setter
+public class DiaryFile extends File {
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "diary_id")
+    @JsonIgnore
+    private Diary diary;
+
+    public void addDiary(Diary diary) {
+        if (!diary.getDiaryFiles().contains(this)) {
+            diary.getDiaryFiles().add(this);
+        }
+        this.diary = diary;
+    }
+
+    @Builder
+    public DiaryFile(FileType fileType, String fileUrl) {
+        this.setFileType(fileType);
+        this.setFileUrl(fileUrl);
+    }
+}
