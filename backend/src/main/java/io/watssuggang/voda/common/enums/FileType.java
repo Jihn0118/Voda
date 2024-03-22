@@ -1,8 +1,3 @@
-package io.watssuggang.voda.common.enums;
-
-/**
- * 알파벳 3글자로 정의할 것
- */
-public enum FileType {
-    IMG, GIF, MP4
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:240842918a23d10fdac6d53f721247d3732fa707f97251958b04650810818278
+size 601
