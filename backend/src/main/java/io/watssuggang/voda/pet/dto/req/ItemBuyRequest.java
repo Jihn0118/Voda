@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c288890deeff1d12adc52fd7d421775ada7c8314ffc67adfdfa78890f25c1541
-size 250
+package io.watssuggang.voda.pet.dto.req;
+
+import jakarta.validation.constraints.Positive;
+import lombok.Getter;
+
+@Getter
+public class ItemBuyRequest {
+
+    @Positive(message = "아이템 번호는 자연수 입니다.")
+    private Integer itemId;
+}

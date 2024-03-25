@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6beab6f66808a6d8e7e8506aad1d46f1c9a914ecda0b85953af868279185f520
-size 338
+package io.watssuggang.voda.diary.repository;
+
+import io.watssuggang.voda.diary.domain.Diary;
+import java.time.LocalDateTime;
+import java.util.List;
+
+public interface DiaryCustomRepository {
+
+    List<Diary> findDiariesByCondition(LocalDateTime start, LocalDateTime end, String emotion,
+        int memberId);
+
+}

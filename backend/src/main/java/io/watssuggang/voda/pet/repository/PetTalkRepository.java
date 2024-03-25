@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dccf405c987f462a36ece174868201062c9e9e76e613c9062cc89155a03ad45d
-size 454
+package io.watssuggang.voda.pet.repository;
+
+import io.watssuggang.voda.common.enums.PetStatus;
+import io.watssuggang.voda.pet.domain.PetTalk;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PetTalkRepository extends JpaRepository<PetTalk, Integer> {
+
+    Boolean existsPetTalkByPetTalkAndPetStatus(String petTalk, PetStatus petStatus);
+
+    List<PetTalk> findAllByPetStatus(PetStatus petStatus);
+}

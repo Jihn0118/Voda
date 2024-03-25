@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:069420cd6ae6c551fd82f77687ebdc8042b06a5b6b2c4481d16749986517f1be
-size 320
+package io.watssuggang.voda.pet.exception;
+
+import io.watssuggang.voda.common.exception.BaseException;
+import io.watssuggang.voda.common.exception.ErrorCode;
+
+public class DuplicateItemNameException extends BaseException {
+
+    public DuplicateItemNameException() {
+        super(ErrorCode.DUPLICATE_ITEM_NAME);
+    }
+}

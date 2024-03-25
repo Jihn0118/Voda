@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10dd14560daca1ed7f8480c24f7b644e06626a1833ce3d9ca7acbc6828483817
-size 345
+package io.watssuggang.voda.common.exception;
+
+import java.util.HashMap;
+import java.util.Map;
+import lombok.Getter;
+
+@Getter
+public class ValidationErrorResponse {
+
+    private final Map<String, String> fieldErrors = new HashMap<>();
+
+    public void addFieldError(String field, String message) {
+        fieldErrors.put(field, message);
+    }
+}

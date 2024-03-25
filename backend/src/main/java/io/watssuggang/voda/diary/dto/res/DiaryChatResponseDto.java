@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e0712fc68ab31e372ad513299f94b75690f9eed1d26bca988f8768d2554d3ea
-size 653
+package io.watssuggang.voda.diary.dto.res;
+
+import java.util.List;
+import lombok.*;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class DiaryChatResponseDto {
+
+    private String id;
+    private String model;
+    private String role;
+    private String stopReason;
+    private Integer stopSequence;
+    private String type;
+    private UsageDTO usage;
+    private List<ContentDTO> content;
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class UsageDTO {
+
+        private Integer inputTokens;
+        private Integer outputTokens;
+    }
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class ContentDTO {
+
+        private String text;
+        private String type;
+    }
+
+}
