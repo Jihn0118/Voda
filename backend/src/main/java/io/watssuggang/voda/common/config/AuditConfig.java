@@ -1,13 +1,3 @@
-package io.watssuggang.voda.common.config;
-
-import io.watssuggang.voda.common.domain.MemberAwareAudit;
-import org.springframework.data.domain.AuditorAware;
-
-//@Configuration
-public class AuditConfig {
-
-    //  @Bean
-    public AuditorAware<Integer> auditorProvider() { // 등록자와 수정자를 처리해주는 AuditorAware을 빈으로 등록
-        return new MemberAwareAudit();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ef2e3de235eb73150f3c18c3c3356c8fa3847e9127bb7d8cc9233c452bc5f03
+size 557
