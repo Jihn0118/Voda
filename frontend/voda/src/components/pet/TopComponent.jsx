@@ -1,19 +1,3 @@
-import React from "react";
-
-export default function TopComponent() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "85%",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "end",
-        gap: "1rem",
-      }}
-    >
-      <h4 style={{ margin: 0 }}>갓소민님</h4>
-      <h3 style={{ margin: 0 }}>오늘 일기 쓰면 1일째</h3>
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:11d2fce53abf0b343348d1b64908f98ff09969da8e93ce1386349b83cd99a270
+size 523
