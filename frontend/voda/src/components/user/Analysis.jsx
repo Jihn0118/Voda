@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb59c9119b99fe7c4105ce00c362006284d4b5350dd6958c68058b04957014f9
-size 1467
+import React from "react";
+import styled from "styled-components";
+import AnalysisDaily from "./AnalysisDaily";
+import AnalysisEmotion from "./AnalysisEmotion";
+import AnalysisPet from "./AnalysisPet";
+import AnalysisCount from "./AnalysisCount";
+import { SectionsContainer, Section } from "react-fullpage";
+
+const Analysis = ({ report }) => {
+  let options = {
+    activeClass: "active", // the class that is appended to the sections links
+    anchors: ["sectionOne", "sectionTwo", "sectionThree", "sectionFour"], // the anchors for each sections
+    arrowNavigation: true, // use arrow keys
+    className: "SectionContainer", // the class name for the section container
+    delay: 1000, // the scroll animation speed
+    navigation: false, // use dots navigatio
+    scrollBar: false, // use the browser default scrollbar
+    sectionClassName: "Section", // the section class name
+    sectionPaddingTop: "0", // the section top padding
+    sectionPaddingBottom: "0", // the section bottom padding
+    verticalAlign: false, // align the content of each section vertical
+  };
+
+  return (
+    <SectionsContainer {...options}>
+      <Section>
+        <AnalysisCount report={report} />
+      </Section>
+      <Section>
+        <AnalysisEmotion report={report} />
+      </Section>
+      <Section>
+        <AnalysisDaily report={report} />
+      </Section>
+      <Section>
+        <AnalysisPet />
+      </Section>
+    </SectionsContainer>
+  );
+};
+
+export default Analysis;

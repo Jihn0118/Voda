@@ -1,3 +1,71 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9e42b112e143b082af2ce0d1ce1349d6a189d42b8bfcae8e40c2f0db02f1ce5
-size 1687
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import Header from "../../components/shop/Header";
+import CategoryBar from "../../components/shop/CategoryBar";
+import ItemList from "../../components/shop/ItemList";
+import usePetStore from "../../store/petStore";
+import { getItem } from "../../services/item";
+import { CircularProgress } from "@mui/material";
+
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const TopComponents = styled.div`
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export default function PetShopPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const { currentCategory, setItems } = usePetStore();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getItem(currentCategory);
+        setItems(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+    setIsLoading(false);
+  }, [currentCategory]);
+
+  return (
+    <Page>
+      <TopComponents>
+        <Header />
+        <CategoryBar />
+      </TopComponents>
+      {isLoading ? (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <CircularProgress />
+        </div>
+      ) : (
+        <ItemList />
+      )}
+    </Page>
+  );
+}

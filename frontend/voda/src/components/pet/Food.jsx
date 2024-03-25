@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f477aa2bf5b7ff847984f884fd5cca918c4ee8ad0e3082390ae055b91f9becc8
-size 1492
+import React from "react";
+import usePetStore from "../../store/petStore";
+import { feedPet } from "../../services/pet";
+
+export default function Food() {
+  const { currentFood, isFeed, setIsFeed } = usePetStore();
+  function feed() {
+    const food = document.getElementById("food");
+    food.animate(
+      [
+        {
+          // from
+          opacity: 1,
+          filter: "grayscale(0%)",
+          transform: "translateX(0%) translateY(0%) rotate(0deg) scale(1)",
+        },
+        {
+          // to
+          filter: "grayscale(50%)",
+          opacity: 0,
+          transform: `translateX(-250%) translateY(+400%) rotate(${Math.round(
+            Math.random() * 3600
+          )}deg) scale(0.5)`,
+        },
+      ],
+      1000
+    );
+  }
+
+  async function clickHandler(e) {
+    if (!isFeed) {
+      feed();
+      try {
+        const response = await feedPet();
+        if (response.status === 200) {
+          setIsFeed(true);
+        } else {
+          console.log(response.status);
+        }
+      } catch (error) {
+        alert("먹이가 없음");
+      }
+    }
+  }
+  return (
+    <>
+      <img
+        id="food"
+        src={`https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food/${currentFood}.png`}
+        onClick={clickHandler}
+        style={
+          isFeed
+            ? {
+                filter: "grayscale(100%)",
+                opacity: "0.5",
+                width: "3rem",
+                height: "3rem",
+              }
+            : {
+                width: "3rem",
+                height: "3rem",
+              }
+        }
+      />
+    </>
+  );
+}
