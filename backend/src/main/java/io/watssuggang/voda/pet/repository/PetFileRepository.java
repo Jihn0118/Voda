@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd602e4765032df0e3da2df5c08c0110ff880983c9c24fc55812adb49a4b7301
-size 608
+package io.watssuggang.voda.pet.repository;
+
+import io.watssuggang.voda.common.domain.File;
+import io.watssuggang.voda.common.enums.Emotion;
+import io.watssuggang.voda.pet.domain.PetFile;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface PetFileRepository extends JpaRepository<File, Integer> {
+
+    @Query("SELECT pf FROM PetFile pf "
+        + "where pf.petEmotion=:emotion "
+        + "and pf.petStage=:stage ")
+    Optional<PetFile> findByPetEmotionAndPetStage(Emotion emotion, Byte stage);
+}
