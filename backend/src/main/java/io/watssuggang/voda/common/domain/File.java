@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de3f6baaf9f8a03169c3db7b9750afd7b7e7512a0c7df98db10e14e009e44718
-size 606
+package io.watssuggang.voda.common.domain;
+
+import io.watssuggang.voda.common.enums.FileType;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.CHAR, name = "domain_type")
+@DiscriminatorValue("f")
+@Getter
+public class File extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer fileId;
+
+    @Column(columnDefinition = "CHAR(2)")
+    @Setter
+    private FileType fileType;
+
+    @Setter
+    private String fileUrl;
+}

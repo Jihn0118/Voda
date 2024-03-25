@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:35feb706460883ba448d355462051614891415612bbe675cb329363a0867ca93
-size 311
+package io.watssuggang.voda.pet.dto.req;
+
+import lombok.Getter;
+import org.hibernate.validator.constraints.Range;
+
+@Getter
+public class ItemUpdateRequest {
+
+    private String imgUrl;
+
+    @Range(min = 0, max = 999, message = "가격은 0원 이상 999원 이하여야 합니다.")
+    private Integer price;
+}
