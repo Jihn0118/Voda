@@ -1,31 +1,3 @@
-package io.watssuggang.voda.diary.service;
-
-import io.watssuggang.voda.diary.dto.req.*;
-import io.watssuggang.voda.diary.dto.req.TalkListRequest.TalkRequest;
-import io.watssuggang.voda.diary.dto.res.*;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-
-
-public interface DiaryService {
-
-    DiaryTtsResponseDto init(Integer userId);
-
-    DiaryTtsResponseDto answer(DiaryAnswerRequestDto reqDto, Integer userId)
-        throws IOException;
-
-    Map<String, Object> getChatList(int id);
-
-    DiaryCreateResponse createDiary(List<TalkRequest> talkList, int diaryId);
-
-    DiaryDetailResponse getDiaryDetail(int memberId, int id);
-
-    List<DiaryDetailResponse> getDiaryList(LocalDateTime start, LocalDateTime end, String emotion,
-        int memberId);
-
-    KarloResponse createImage(KarloRequest karloRequest);
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9fc1229f2f2cab8d9b0c76d5785ffea3f185aa6980d847dd18700462c2733de
+size 912
