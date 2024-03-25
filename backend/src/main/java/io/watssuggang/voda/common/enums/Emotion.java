@@ -1,24 +1,3 @@
-package io.watssuggang.voda.common.enums;
-
-import io.watssuggang.voda.common.converter.AbstractLabelConverter;
-import lombok.Getter;
- 
-@Getter
-public enum Emotion implements LabelEnum {
-    NONE("00"), JOY("01"), ANGER("02"), SADNESS("03"), FEAR("04"), CURIOSITY("05");
-
-    private final String label;
-
-    Emotion(String label) {
-        this.label = label;
-    }
-
-    // autoApply를 활성화하여 @Convert Annotation을 명시하지 않아도 전역으로 적용 가능
-    @jakarta.persistence.Converter(autoApply = true)
-    static class ConverterAbstract extends AbstractLabelConverter<Emotion> {
-
-        public ConverterAbstract() {
-            super(Emotion.class);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bc2318fffb5b0d7914cdc566ba7e29875209fa5d6d1a7fe4d8c022bd2aad4c4d
+size 696
