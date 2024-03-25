@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:345a3fd84f70bac60a6c013ce51b5b538b20ca2eb79f81771c2083586b9383f6
-size 888
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import useUserStore from "../../store/userStore";
+import { getUserReport } from "../../services/mypage";
+import LoadingReport from "../../components/user/LoadingReport";
+import Analysis from "../../components/user/Analysis";
+import NotFound from "../../components/user/NotFound";
+const UserReport = () => {
+  const [report, setReport] = useState("");
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const response = await getUserReport();
+        setReport(response);
+        setLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getUserData();
+  }, []);
+
+  return (
+    <div>{loading ? <LoadingReport /> : <Analysis report={report.data} />}</div>
+  );
+};
+
+export default UserReport;
