@@ -1,26 +1,3 @@
-package io.watssuggang.voda.common.domain;
-
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-import lombok.Getter;
-import org.springframework.data.annotation.*;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
-@Getter
-public abstract class BaseEntity {
-
-    @CreatedDate
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    private LocalDateTime modifiedAt;
-
-    @CreatedBy
-    @Column(updatable = false)
-    private Integer writer;
-
-    @LastModifiedBy
-    private Integer modifier;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3417c271a31e4944d553b468fb367ba6b2faa5f45979c1a943b8db9d29c3bf0d
+size 602
