@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c35fdfc52b3e6462cf5095075a9412824fee96e7f40655db442c88971aa17187
-size 1011
+package io.watssuggang.voda.pet.domain;
+
+import io.watssuggang.voda.common.enums.ItemStatus;
+import io.watssuggang.voda.member.domain.Member;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Own {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ownedId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "item_id")
+    private Item item;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+    @Column(columnDefinition = "char(2)")
+    private ItemStatus itemStatus = ItemStatus.OWNED;
+
+    public static Own of() {
+        return new Own();
+    }
+
+    public void purchase(Member member, Item item) {
+        if (member.getOwns().contains(this)) {
+            member.getOwns().add(this);
+        }
+        this.item = item;
+        this.member = member;
+    }
+
+    public void use() {
+        itemStatus = ItemStatus.USING;
+    }
+}

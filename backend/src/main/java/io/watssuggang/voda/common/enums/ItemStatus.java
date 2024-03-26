@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c77322c013967cb96b82d6dfeb5eb2181de65bcd6aca774c5458142858b8469
-size 562
+package io.watssuggang.voda.common.enums;
+
+import io.watssuggang.voda.common.converter.AbstractLabelConverter;
+import jakarta.persistence.Converter;
+import lombok.Getter;
+
+@Getter
+public enum ItemStatus implements LabelEnum {
+
+    USING("01"), OWNED("02");
+
+    public final String label;
+
+    ItemStatus(String label) {
+        this.label = label;
+    }
+
+    @Converter(autoApply = true)
+    static class ConverterAbstract extends AbstractLabelConverter<ItemStatus> {
+
+        public ConverterAbstract() {
+            super(ItemStatus.class);
+        }
+    }
+}
