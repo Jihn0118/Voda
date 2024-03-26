@@ -1,22 +1,3 @@
-package io.watssuggang.voda.pet.dto.res;
-
-import io.watssuggang.voda.pet.domain.Item;
-import lombok.Getter;
-
-@Getter
-public class OwnResponse {
-
-    private final Integer itemId;
-    private final String imgURl;
-    private final String name;
-
-    private OwnResponse(Item item) {
-        this.itemId = item.getItemId();
-        this.imgURl = item.getItemImageUrl();
-        this.name = item.getItemName();
-    }
-
-    public static OwnResponse of(Item item) {
-        return new OwnResponse(item);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8adc2a8bdfe1d58827a3098832d258e572318893ebb41041864db7da3232f345
+size 577
