@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7bd79ac4b201cc8eec48dbd43293a61558029950f3487668a90d3bc2328c0cc6
-size 298
+package io.watssuggang.voda.diary.exception;
+
+import io.watssuggang.voda.common.exception.BaseException;
+import io.watssuggang.voda.common.exception.ErrorCode;
+
+public class DiaryException extends BaseException {
+
+    public DiaryException(ErrorCode errorCode) {
+        super(errorCode);
+    }
+
+}

@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:55d186db3c4d4d67943bc4cbfdb8d545b103b834538dad0bc19e9cfdc5abce64
-size 868
+package io.watssuggang.voda.diary.dto.res;
+
+import io.watssuggang.voda.diary.domain.Diary;
+import io.watssuggang.voda.diary.dto.DailyInfoDto;
+import java.util.ArrayList;
+import java.util.List;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class MonthlyDiariesResDto {
+
+    Integer year;
+    Integer month;
+    List<DailyInfoDto> calendar;
+
+    public MonthlyDiariesResDto(Integer year, Integer month, List<Diary> diaries) {
+        this.year = year;
+        this.month = month;
+
+        calendar = new ArrayList<>();
+
+        for (int i = 1; i <= 31; ++i) {
+            int day = i;
+
+            List<Diary> diaryList = diaries.stream()
+                .filter(d -> d.getCreatedAt().getDayOfMonth() == day).toList();
+
+            if (!diaryList.isEmpty()) {
+                calendar.add(new DailyInfoDto(day, diaryList));
+            }
+        }
+    }
+}
