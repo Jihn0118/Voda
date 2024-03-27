@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb0ab201097cd4c56955e583a338d85125401cf2581fb95f58fd072559142ac3
-size 689
+package io.watssuggang.voda.common.scheduling;
+
+import io.watssuggang.voda.member.service.MemberService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Slf4j
+@RequiredArgsConstructor
+@Component
+public class MemberScheduler {
+
+    private final MemberService memberService;
+
+    /**
+     * 사용자가 일기를 연속으로 쓴 일수를 매일 자정에 업데이트
+     */
+    @Scheduled(cron = "0 0 0 * * *")
+    public void updateMemberCountSchedule() {
+        memberService.updateMemberCount();
+        log.info("update member count");
+    }
+}
