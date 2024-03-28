@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61346e7c59a5ef09d9996da2703c2ba26ee3c42b5bfeb69569ea8c9cad4f53c7
-size 685
+import React from "react";
+import styled from "styled-components";
+
+const NameContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 2rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #fff7b2;
+`;
+
+export default function ItemNameContainer({ bought = false, name }) {
+  return (
+    <NameContainer
+      style={
+        bought
+          ? {
+              backgroundColor: "#89ADAA",
+            }
+          : {
+              backgroundColor: "#AFAB99",
+            }
+      }
+    >
+      <p style={{ margin: "0", fontWeight: "bold" }}>{name}</p>{" "}
+    </NameContainer>
+  );
+}
