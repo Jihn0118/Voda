@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:382ce650541da5c658b8b592570c80e369b0f09f5c9beec57357ad4bc9780e21
-size 524
+package io.watssuggang.voda.pet.dto.res;
+
+import java.util.Map;
+import lombok.Getter;
+
+@Getter
+public class PetHomeResponse {
+
+    private final PetResponse pet;
+    private final Map<String, OwnResponse> using;
+
+    public PetHomeResponse(PetResponse pet, Map<String, OwnResponse> using) {
+        this.pet = pet;
+        this.using = using;
+    }
+
+    public static PetHomeResponse of(
+            PetResponse pet,
+            Map<String, OwnResponse> using
+    ) {
+        return new PetHomeResponse(pet, using);
+    }
+}

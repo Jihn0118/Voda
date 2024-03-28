@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ec727b482d765ec1047543aad924d8455c79b6ccb8afcf33d32994697834ea1
-size 293
+package io.watssuggang.voda.pet.exception;
+
+import io.watssuggang.voda.common.exception.BaseException;
+import io.watssuggang.voda.common.exception.ErrorCode;
+
+public class ItemException extends BaseException {
+
+    public ItemException(ErrorCode errorCode) {
+        super(errorCode);
+    }
+}
