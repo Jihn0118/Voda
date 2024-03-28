@@ -1,29 +1,3 @@
-import React from "react"; // eslint-disable-line no-unused-vars
-import myPageBackground from "../../assets/mypage/mypage_background.png";
-import styled from "styled-components";
-import { Box } from "@mui/material";
-import TopComponent from "../../components/user/TopComponent";
-import BottomComponent from "../../components/user/BottomComponent";
-import axios from "axios";
-
-const CustomBox = styled.div({
-  backgroundImage: `url(${myPageBackground})`,
-  backgroundSize: "cover",
-  height: "85vh",
-  margin: "0 auto",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  alignItems: "center",
-});
-
-const User = () => {
-  return (
-    <CustomBox>
-      <TopComponent />
-      <BottomComponent />
-    </CustomBox>
-  );
-};
-
-export default User;
+version https://git-lfs.github.com/spec/v1
+oid sha256:4eff0f409b8cf43ddcff1744c31a88013900db7caffe82f0dfcba57b0dfa2811
+size 768
