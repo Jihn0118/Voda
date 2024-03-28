@@ -1,19 +1,3 @@
-import React, { useEffect } from "react"; // eslint-disable-line no-unused-vars
-import Calendar from "../../components/calendar/Calendar";
-
-const CalendarPage = () => {
-  return (
-    <div>
-      <h2
-        style={{
-          margin: "0 auto",
-        }}
-      >
-        감정 캘린더
-      </h2>
-      <Calendar />
-    </div>
-  );
-};
-
-export default CalendarPage;
+version https://git-lfs.github.com/spec/v1
+oid sha256:97d8a95e46f82b440ea2ace1225024096512df0b8e177ad1183874c3ca44037f
+size 428
