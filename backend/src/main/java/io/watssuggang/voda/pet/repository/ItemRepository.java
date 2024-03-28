@@ -1,8 +1,3 @@
-package io.watssuggang.voda.pet.repository;
-
-import io.watssuggang.voda.pet.domain.Item;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface ItemRepository extends JpaRepository<Item, Integer> {
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2e711408b2c3a5bab393b275cc4401da12d03d3bed7fee4b50e8cfc76b302e82
+size 400
