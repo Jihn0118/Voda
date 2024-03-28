@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d70f93cedc2e660cec023e9b8b9fe3ff926cf753299db3855d432f486fe111e0
-size 1184
+package io.watssuggang.voda.pet.controller;
+
+import io.watssuggang.voda.common.security.annotation.CurrentUser;
+import io.watssuggang.voda.common.security.dto.SecurityUserDto;
+import io.watssuggang.voda.pet.dto.res.OwnResponse;
+import io.watssuggang.voda.pet.service.OwnService;
+import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/own")
+public class OwnController {
+
+    private final OwnService ownService;
+
+    @PatchMapping("/use/{own-id}")
+    public ResponseEntity<OwnResponse> useItem(
+            @CurrentUser SecurityUserDto userDto,
+            @PathVariable(name = "own-id") Integer ownId
+    ) {
+        OwnResponse ownResponse = ownService.usingItem(userDto, ownId);
+        return ResponseEntity.ok(ownResponse);
+    }
+
+    @PatchMapping("/unuse")
+    public ResponseEntity<Void> unUseItems(
+            @CurrentUser SecurityUserDto userDto,
+            @RequestBody List<Integer> ownIds
+    ) {
+        ownService.unUseItems(userDto, ownIds);
+        return ResponseEntity.noContent().build();
+    }
+}
