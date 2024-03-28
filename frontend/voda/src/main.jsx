@@ -1,14 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
-import axios from "axios";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  // </React.StrictMode>
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:4bae4eb69ea662922fbb3db5610dcea126394c71aa7315828e782c4537542f50
+size 359
