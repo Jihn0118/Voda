@@ -1,11 +1,11 @@
-package io.watssuggang.voda.pet.exception;
+package io.watssuggang.voda.member.exception;
 
 import io.watssuggang.voda.common.exception.BaseException;
 import io.watssuggang.voda.common.exception.ErrorCode;
 
-public class PetException extends BaseException {
+public class MemberException extends BaseException {
 
-    public PetException(ErrorCode errorCode) {
+    public MemberException(ErrorCode errorCode) {
         super(errorCode);
     }
 }
