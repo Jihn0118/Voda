@@ -1,31 +1,3 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { usePetStore } from "../../store/petStore";
-import { getPetTalk } from "../../services/pet";
-
-const Chatbox = styled.div({
-  borderRadius: "2rem",
-  backgroundColor: "#686868",
-  width: "70vw",
-  color: "white",
-  textAlign: "center",
-  padding: "1rem",
-});
-
-export default function PetTalk(props) {
-  const { isFeed } = usePetStore();
-  const [talk, setTalk] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getPetTalk();
-      setTalk(data.talk);
-    };
-  }, []);
-
-  return (
-    <>
-      <Chatbox>{"talk"}</Chatbox>
-    </>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e1ea56d16fd8562e05a520f863e9a15151f2aa8c049c79c4a06ce68c61188b4a
+size 683
