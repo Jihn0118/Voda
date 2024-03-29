@@ -1,21 +1,3 @@
-import React from "react"; // eslint-disable-line no-unused-vars
-import IntroductionCarousel from "../../components/login/IntroductionCarousel";
-import IntroductionHeader from "../../components/login/IntroductionHeader";
-import LoginButton from "../../components/login/LoginButton";
-
-const Introduction = () => {
-  return (
-    <div
-      style={{
-        width: "85%",
-        margin: "auto",
-      }}
-    >
-      <IntroductionHeader />
-      <IntroductionCarousel />
-      <LoginButton />
-    </div>
-  );
-};
-
-export default Introduction;
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e3c5c6ccc8df6c1d71917508ee3f8ca8c0cae075650ea02065861625b46207b
+size 1285
