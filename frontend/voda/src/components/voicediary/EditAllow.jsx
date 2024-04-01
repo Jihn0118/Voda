@@ -1,35 +1,3 @@
-import React from "react"; // eslint-disable-line no-unused-vars
-import styled from "styled-components";
-import Switch from "@mui/material/Switch";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import useStore from "../../store/store";
-const Box = styled.div`
-  margin: 0 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const EditDiary = styled(Typography)({
-  color: "gray",
-});
-
-const editAllow = () => {
-  const store = useStore();
-  return (
-    <Box>
-      <EditDiary>대화내용 수정</EditDiary>
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Typography>Off</Typography>
-        <Switch
-          defaultChecked={store.editAllow}
-          onChange={store.changeEditMode}
-        />
-        <Typography>On</Typography>
-      </Stack>
-    </Box>
-  );
-};
-
-export default editAllow;
+version https://git-lfs.github.com/spec/v1
+oid sha256:aa97c5276ae2c1ad6dd9e095762a2fb0439c589bff832fcfec7712efadae9adb
+size 894
