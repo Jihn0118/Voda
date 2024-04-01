@@ -1,36 +1,3 @@
-import React from "react";
-import { useUserStore } from "../../store/userStore";
-import styled from "styled-components";
-
-const HeaderComponent = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  width: "85%",
-  borderBottom: "1px solid #ccc",
-});
-
-export default function Header() {
-  const { coins } = useUserStore();
-  return (
-    <HeaderComponent style={{ zIndex: 99 }}>
-      <h3>상점</h3>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "0.5rem",
-        }}
-      >
-        <img
-          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Coin.png"
-          alt="Coin"
-          width="40rem"
-          height="40rem"
-        />
-        <h3>{coins}</h3>
-      </div>
-    </HeaderComponent>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c9bfe95d2587f4f2165ac14fc3f3f71f0894258bb548f245eccd7603c088ef2f
+size 893
