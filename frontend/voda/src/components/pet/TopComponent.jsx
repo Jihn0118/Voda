@@ -1,21 +1,3 @@
-import React from "react";
-import { useUserStore } from "../../store/userStore";
-
-export default function TopComponent() {
-  const { nickname, diaryStreak } = useUserStore();
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "85%",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "end",
-        gap: "1rem",
-      }}
-    >
-      <h4 style={{ margin: 0 }}>{nickname}님</h4>
-      <h3 style={{ margin: 0 }}>일기 쓴지 {diaryStreak}일째</h3>
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f49ca62b487651ba688479774b7e22998f05e48e75d4e1f78181c524888b81fd
+size 530
