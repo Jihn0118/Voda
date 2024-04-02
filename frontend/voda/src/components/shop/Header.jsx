@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5769394f48a048284be3f539bc32aed264ddfb8d68be650100d9c44a785e9ba4
-size 870
+import React from "react";
+import { useUserStore } from "../../store/userStore";
+import styled from "styled-components";
+
+const HeaderComponent = styled.div({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  width: "85%",
+  borderBottom: "1px solid #ccc",
+});
+
+export default function Header() {
+  const { coins } = useUserStore();
+  const EMOJI_URL = import.meta.env.VITE_EMOJI_URL;
+  return (
+    <HeaderComponent style={{ zIndex: 99 }}>
+      <h3>상점</h3>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "0.5rem",
+        }}
+      >
+        <img
+          src={`${EMOJI_URL}/Objects/Coin.png`}
+          alt="Coin"
+          width="40rem"
+          height="40rem"
+        />
+        <h3>{coins}</h3>
+      </div>
+    </HeaderComponent>
+  );
+}
