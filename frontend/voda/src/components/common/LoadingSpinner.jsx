@@ -1,20 +1,3 @@
-import React from "react";
-import ClipLoader from "react-spinners/ClipLoader"; //설치한 cliploader을 import한다
-
-const LodaingSpinner = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "80%",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <ClipLoader />
-    </div>
-  );
-};
-
-export default LodaingSpinner;
+version https://git-lfs.github.com/spec/v1
+oid sha256:db6f5c02805ca421905fd8e9faa26c2fa2181689b7aaa4722b2dd54186b7e653
+size 387
