@@ -1,26 +1,3 @@
-package io.watssuggang.voda.diary.dto.req;
-
-import java.util.List;
-import lombok.*;
-
-@Getter
-@Setter
-@ToString
-public class TalkListRequest {
-
-    private int diaryId;
-    private List<TalkRequest> talk_list;
-
-    @Getter
-    @ToString
-    public static class TalkRequest {
-
-        private final String question;
-        private final String answer;
-
-        public TalkRequest(String question, String answer) {
-            this.question = question;
-            this.answer = answer;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0ea9da2ff37b78a21bcd620da4afa81db343427bd096920b93d11b395c3b471d
+size 653
