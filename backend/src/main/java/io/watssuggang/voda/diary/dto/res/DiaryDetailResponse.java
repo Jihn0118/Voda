@@ -1,35 +1,3 @@
-package io.watssuggang.voda.diary.dto.res;
-
-import io.watssuggang.voda.common.enums.Emotion;
-import io.watssuggang.voda.diary.domain.Diary;
-import io.watssuggang.voda.diary.domain.DiaryFile;
-import java.time.LocalDateTime;
-import java.util.List;
-import lombok.Getter;
-
-@Getter
-public class DiaryDetailResponse {
-
-    private final Integer diaryId;
-    private final String writerName;
-    private final LocalDateTime createdAt;
-    private final String diaryTitle;
-    private final String diaryContent;
-    private final Emotion diaryEmotion;
-    private final List<DiaryFile> diaryFiles;
-
-    private DiaryDetailResponse(Diary diary) {
-        this.diaryId = diary.getDiaryId();
-        this.writerName = diary.getMember().getMemberName();
-        this.createdAt = diary.getModifiedAt();
-        this.diaryTitle = diary.getDiarySummary();
-        this.diaryContent = diary.getDiaryContent();
-        this.diaryEmotion = diary.getDiaryEmotion();
-        this.diaryFiles = diary.getDiaryFiles();
-    }
-
-    public static DiaryDetailResponse of(Diary diary) {
-        return new DiaryDetailResponse(diary);
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5497419f188b6d3b80acca2c614d5fb834f33e2a064780a4163d83df4fe1e15c
+size 1114
