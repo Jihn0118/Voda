@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:212157c30b8be15817b12ffa8219916f7c827498176c97b6682ea2e0130ab565
-size 927
+import React from "react"; // eslint-disable-line no-unused-vars
+import { Button } from "@mui/material";
+// import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { usePersistStore } from "../../store/store";
+const StartRecord = () => {
+  const store = usePersistStore();
+  const navigate = useNavigate();
+  const navigateRecord = () => {
+    navigate("/voice/record");
+  };
+  return (
+    <Button
+      variant="outlined"
+      sx={
+        store.darkmode
+          ? {
+              borderColor: "white",
+              fontWeight: "bold",
+              color: "white",
+              width: "80vw",
+            }
+          : {
+              borderColor: "black",
+              fontWeight: "bold",
+              color: "black",
+              width: "80vw",
+            }
+      }
+      onClick={navigateRecord}
+    >
+      일기 쓰기
+    </Button>
+  );
+};
+
+export default StartRecord;
