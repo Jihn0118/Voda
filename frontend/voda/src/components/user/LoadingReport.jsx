@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f9335da1ff6a80443e52bf1b53eedce7b4343d7ce697c1a725a219b5eb055cc
-size 672
+import React from "react";
+import styled from "styled-components";
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30% auto;
+`;
+const LoadingReport = () => {
+  const month = new Date().getMonth() + 1;
+  const EMOJI_URL = import.meta.env.VITE_EMOJI_URL;
+  return (
+    <Container>
+      <div style={{ fontWeight: "bold", fontSize: "1.5rem", padding: "10%" }}>
+        {month}월 일기 분석중 ...
+      </div>
+      <img
+        src={`${EMOJI_URL}/People/Man%20Technologist.png`}
+        alt="Technologist"
+        width="300"
+        height="300"
+      />
+    </Container>
+  );
+};
+export default LoadingReport;
