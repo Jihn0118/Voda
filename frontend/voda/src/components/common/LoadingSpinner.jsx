@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8da15c9c02a1908fc97c15d1d00af44e46d7f76ea644e3ea50200a8b24df8c10
-size 753
+import React from "react";
+import ClipLoader from "react-spinners/ClipLoader"; //설치한 cliploader을 import한다
+import { usePersistStore } from "../../store/store";
+
+const LoadingSpinner = () => {
+  const store = usePersistStore();
+  return (
+    <div
+      style={
+        store.darkmode
+          ? {
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              filter: "invert(100%)",
+            }
+          : {
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }
+      }
+    >
+      <ClipLoader />
+    </div>
+  );
+};
+
+export default LoadingSpinner;
