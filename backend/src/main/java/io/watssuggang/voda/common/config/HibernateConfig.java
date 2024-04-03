@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfc2a73292d05389b2368ae08e5a2da6749a0188e71f5b528a6c884b982da506
-size 687
+package io.watssuggang.voda.common.config;
+
+import lombok.RequiredArgsConstructor;
+import org.hibernate.cfg.AvailableSettings;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@RequiredArgsConstructor
+@Configuration
+public class HibernateConfig {
+
+    private final QueryCountInspector queryCountInspector;
+
+    @Bean
+    public HibernatePropertiesCustomizer configureStatementInspector() {
+        return hibernateProperties ->
+                hibernateProperties.put(AvailableSettings.STATEMENT_INSPECTOR, queryCountInspector);
+    }
+}
