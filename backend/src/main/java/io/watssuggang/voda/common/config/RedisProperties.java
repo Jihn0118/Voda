@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0ba2d0ed0a7c693ed035e63afcb312aaa7085f8ce2a5608f9156a5b2db9e9cd
-size 373
+package io.watssuggang.voda.common.config;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+ 
+@Data
+@Component
+@ConfigurationProperties(prefix = "spring.data.redis")
+public class RedisProperties {
+
+    private String host;
+    private int port;
+    private String password;
+}
