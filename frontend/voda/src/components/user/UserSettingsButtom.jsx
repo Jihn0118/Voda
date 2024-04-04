@@ -1,9 +1,3 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-
-export default function UserSettingsButton() {
-  return <div></div>;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:21e39fccdd8fe8fae31c1cd22396320e0d72b0c451f614d231ae4eda89249c37
+size 271
