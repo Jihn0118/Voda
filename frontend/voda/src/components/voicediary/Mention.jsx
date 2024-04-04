@@ -1,15 +1,3 @@
-import React from "react";
-const Mention = ({ aiSpeaking, voiceRecognized }) => {
-  return aiSpeaking ? (
-    <div></div>
-  ) : voiceRecognized ? (
-    <div>잘 듣고 있어요. 계속 말씀하세요</div>
-  ) : (
-    <div>
-      음성을 인식하지 못했어요. <br />
-      다시 말씀해주세요
-    </div>
-  );
-};
-
-export default Mention;
+version https://git-lfs.github.com/spec/v1
+oid sha256:032493abfc6b11b84232a7e7a6449a9c34f5fb0b61bfdd81cabf9ee96a31bc25
+size 352
